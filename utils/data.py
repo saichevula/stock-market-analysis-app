@@ -1,5 +1,6 @@
 import yfinance as yf
 import pandas as pd
+import streamlit as st
 
 watchlist = ["AAPL", "MSFT", "GOOGL", "AMZN", "TSLA", "NVDA", "META", "JPM", "V", "BRK-B"]
 
@@ -7,6 +8,7 @@ def fetch_ticker_data(ticker, period="1y"):
     data = yf.Ticker(ticker.upper()).history(period=period)
     return data
 
+@st.cache_data(ttl=3600)
 def get_top5():
     prices = {}
     for ticker in watchlist:
