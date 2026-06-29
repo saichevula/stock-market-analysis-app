@@ -75,13 +75,8 @@ with tab2:
     st.set_page_config(layout="wide", page_title="Backtest")
     st.title("🔁 Strategy Backtest")
 
-    with st.form("backtest_form"):
-        ticker_input = st.text_input("Enter ticker(s) separated by commas")
-        submitted = st.form_submit_button("Run Backtest")
-
-    if submitted:
-        tickers = [t.strip() for t in ticker_input.split(",")]
-        for ticker in tickers:
+    tickers = [t.strip() for t in ticker_input.split(",")]
+    for ticker in tickers:
             data = fetch_ticker_data(ticker,period="1y")
             close = data["Close"].dropna().squeeze()
             st.subheader(f"{ticker.upper()} — Strategy Comparison")
