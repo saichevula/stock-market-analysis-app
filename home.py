@@ -6,7 +6,6 @@ st.title("📈 Stock Analyzer")
 tab1, tab2 = st.tabs(["📈 Analysis", "🔁 Backtest"])
 
 with tab1:
-    import streamlit as st
     import numpy as np
     import plotly.graph_objects as go
     from utils.data import fetch_ticker_data
@@ -68,14 +67,13 @@ with tab1:
                 st.divider()
 
 with tab2:
-    import streamlit as st
     from utils.data import fetch_ticker_data
     from utils.strategies import build_stats_table, color_table
 
     st.set_page_config(layout="wide", page_title="Backtest")
     st.title("🔁 Strategy Backtest")
 
-    tickers = [t.strip() for t in ticker_input.split(",")]
+    tickers = [t.strip() for t in ticker_input.split(",") if t.strip()]
     for ticker in tickers:
             data = fetch_ticker_data(ticker,period="1y")
             close = data["Close"].dropna().squeeze()
