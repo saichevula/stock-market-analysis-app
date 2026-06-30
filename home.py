@@ -21,7 +21,7 @@ with tab1:
         submitted = st.form_submit_button("Submit")
 
     if submitted:
-        tickers = [t.strip() for t in ticker_input.split(",")]
+        tickers = [t.strip() for t in ticker_input.split(",") if t.strip()]
 
     # --- Build all 3 charts across all tickers first ---
         fig_price = go.Figure()
