@@ -8,6 +8,10 @@ def fetch_ticker_data(ticker, period="1y"):
     data = yf.Ticker(ticker.upper()).history(period=period)
     return data
 
+def fetch_intraday_data(ticker, interval="5m", period="5d"):
+    data = yf.Ticker(ticker.upper()).history(interval=interval, period=period)
+    return data
+
 @st.cache_data(ttl=3600)
 def get_top5():
     prices = {}
