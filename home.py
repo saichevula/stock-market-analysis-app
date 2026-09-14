@@ -28,17 +28,12 @@ st.markdown(
         --ink: #1B2430;
         --ink-soft: #5B6472;
         --line: #DEDACB;
-        --brass: #9C7A29;
+        --brass: #7C5F1E;
         --gain: #2F6F4F;
     }
 
     [data-testid="stAppViewContainer"], .stApp{
         background-color: var(--paper);
-        background-image: repeating-linear-gradient(
-            to bottom,
-            transparent, transparent 35px,
-            var(--line) 35px, var(--line) 36px
-        );
     }
     [data-testid="stHeader"]{ background: transparent; }
     [data-testid="stToolbar"]{ visibility: hidden; }
