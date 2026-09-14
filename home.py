@@ -20,16 +20,15 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
-
-    :root{
-        --paper: #F2F0E8;
-        --panel: #FBFAF4;
-        --ink: #1B2430;
-        --ink-soft: #5B6472;
-        --line: #DEDACB;
-        --brass: #7C5F1E;
-        --gain: #2F6F4F;
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=
+        :root{
+            --paper: #0A0A0A;       /* page background */
+            --panel: #111111;       /* card/ledger background */
+            --ink: #F2F2F2;         /* main text */
+            --ink-soft: #8A8A8A;    /* secondary text */
+            --line: #292929;        /* borders and dividers */
+            --brass: #B8B8B8;       /* accent — arrow icon, +/− toggle */
+            --gain: #6FAF8A;        /* market open green dot */
     }
 
     [data-testid="stAppViewContainer"], .stApp{
